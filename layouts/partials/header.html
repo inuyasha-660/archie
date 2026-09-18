@@ -18,13 +18,6 @@
 	{{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
 	{{ end -}}
 
-    {{ if .Site.Params.useCDN | default false -}}
-        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@1,400&display=swap" rel="stylesheet">
-	{{- else -}}
-	{{ $fontstyle := resources.Get "css/fonts.css" | fingerprint }}
-        <link href="{{ $fontstyle.Permalink }}" rel="stylesheet">
-	{{ end }}
-
 	{{ $style := resources.Get "css/main.css" | fingerprint }}
 	<link rel="stylesheet" type="text/css" media="screen" href="{{ $style.Permalink }}" />
 

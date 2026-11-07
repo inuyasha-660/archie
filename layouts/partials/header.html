@@ -20,6 +20,4 @@
 
 	{{ $style := resources.Get "css/main.css" | fingerprint }}
 	<link rel="stylesheet" type="text/css" media="screen" href="{{ $style.Permalink }}" />
-    {{ $darkstyle := resources.Get "css/dark.css" | fingerprint }}
-    <link rel="stylesheet" type="text/css" media="(prefers-color-scheme: dark)" href="{{ $darkstyle.Permalink }}" />
 </head>
